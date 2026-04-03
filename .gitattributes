@@ -1,3 +1,10 @@
 * annex.backend=MD5E
 **/.git* annex.largefiles=nothing
 * annex.largefiles=((mimeencoding=binary)and(largerthan=0))
+
+# File geodatabases and raster payloads are binary data; never apply EOL conversion.
+data/bc/**/*.gdb/** -text
+data/**/*.tif -text
+data/**/*.tiff -text
+data/**/*.feather -text
+data/**/*.gpkg -text
